@@ -169,7 +169,7 @@ task visualize_matrix {
     cpu: 2
     disks: "local-disk " + disk_size + " SSD"
     disk: disk_size + " GB"
-   # maxRetries: 3
+    maxRetries: 3
     preemptible: 0
   }
 }
