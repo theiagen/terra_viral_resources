@@ -107,6 +107,7 @@ task visualize_matrix {
     File matrix
     String cluster_name
     Int disk_size = 100
+    Int memory = 4
   }
   command <<<
     python3 <<CODE
@@ -164,7 +165,7 @@ task visualize_matrix {
   }
   runtime {
     docker: "staphb/freyja:1.3.9" 
-    memory: "2 GB"
+    memory: "~{memory} GB"
     cpu: 2
     disks: "local-disk " + disk_size + " SSD"
     disk: disk_size + " GB"
